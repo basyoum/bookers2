@@ -1,11 +1,20 @@
+<p>users/show部分テンプレートにする</p>
+
+
 <div>
   <h1>Book detail</h1>
-  <p><%= image_tag book.user.get_profile_image(100,100) %></p>
-  <p><%= @book.user.name %></p>
-  <p><%= @book.title %></p>
+  <%= link_to user_path(@book.user.id) do %>
+  　<%= image_tag @book.user.get_profile_image(100,100) %>
+  　<%= @book.user.name %>
+  <% end %>
+  <p><%= link_to @book.title, book_path(@book) %></p>
   <p><%= @book.body %></p>
+
   <p>editリンク</p>
+
+
   <% if @book.user == current_user %>
+   <%= link_to "Edit", edit_book_path(@book) %>
    <%= link_to "Destroy", book_path(@book), method: :delete %>
   <% end %>
 </div>
