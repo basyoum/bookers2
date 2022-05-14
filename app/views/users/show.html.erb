@@ -1,3 +1,9 @@
+<% if flash[:notice] %>
+ <div class = "flash">
+  <%= flash[:notice] %>
+ </div>
+<% end %>
+
 <div>
   <h1>User info</h1>
   <%= link_to user_path(@user.id) do %>
