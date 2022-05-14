@@ -12,6 +12,11 @@ import "channels"
 import '@fortawesome/fontawesome-free/js/all';
 // FontAwesome
 
+import "jquery";
+import "popper.js";
+import "bootstrap";
+import "../stylesheets/application"
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
