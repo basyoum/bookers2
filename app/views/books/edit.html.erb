@@ -7,12 +7,15 @@
  </ul>
 <% end %>
 
-<h1>Editing Book</h1>
 
+<div class = "container">
+ <div class = "row">
+  <div class = "col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+<h1>Editing Book</h1>
 <%= form_with model:@book do |f| %>
-<p>Title <%= f.text_field :title %></p>
-<p>Opinion <%= f.text_area :body %></p>
-<%= f.submit "Update Book" %>
+<p>Title</p><%= f.text_field :title %>
+<p>Opinion</p> <%= f.text_area :body %>
+<div><%= f.submit "Update Book", class:  "btn btn-success" %></div>
 <% end %>
 
 <% if @book.user == current_user %>
@@ -20,3 +23,6 @@
    |
    <%= link_to "Back", books_path(@book) %>
 <% end %>
+</div>
+</div>
+</div>

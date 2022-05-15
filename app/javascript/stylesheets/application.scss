@@ -1,11 +1,7 @@
 @import '~bootstrap/scss/bootstrap';
 @import '@fortawesome/fontawesome-free/scss/fontawesome';
 
-table{
-  border-spacing:0;
-}
-
-table th, table td{
+.user-info td{
   border-bottom:1px solid black;
   padding:20px;
 }
@@ -14,4 +10,8 @@ table th, table td{
   text-align:center;
   border:1px solid black;
   margin:20px;
+}
+
+.user-edit:hover{
+  background-color:#d3d3d3;
 }
