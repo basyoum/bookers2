@@ -1,3 +1,7 @@
+<div class = "container">
+<div class = "row">
+<div class = "col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+
 <h2>User info</h2>
 <% if @user.errors.any? %>
  <%= @user.errors.count %>error prohibited this obj from being saved:
@@ -6,22 +10,27 @@
   <li><%= message %></li>
   <% end %>
  </ul>
-<% end %>
+ <% end %>
 
 <% if @user == current_user %>
-
 <%= form_with model: @user do |f| %>
-
- <label for = "inputName">Name</label>
- <%= f.text_field :name, autofocus: true, id: "inputName" %>
-
- <label for = "inputImage">Image</label>
- <%= f.file_field :profile_image, placeholder: "プロフィール画像", accept: "image/*" %>
-
- <label for = "inputIntroduction">Introduction</label>
- <%= f.text_area :introduction, autofocus: true, id: "inputIntroduction" %>
-
- <%= f.submit "Uodate User" %>
+<div class = "form-group w-50">
+<p><label for = "inputName">Name</label></p>
+<%= f.text_field :name, autofocus: true, id: "inputName" %>
+</div>
+<div class = "form-group">
+<p><label for = "inputImage">Image</label></p>
+<%= f.file_field :profile_image, placeholder: "プロフィール画像", accept: "image/*" %>
+</div>
+<div class = "form-group">
+<p><label for = "inputIntroduction">Introduction</label></p>
+<%= f.text_area :introduction, autofocus: true, id: "inputIntroduction" %>
+</div>
+<div class = "form-group">
+ <%= f.submit "Uodate User", class: "btn btn-secondary" %>
+</div>
 <% end %>
-
 <% end %>
+</div>
+</div>
+</div>
